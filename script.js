@@ -17,6 +17,7 @@
     'nav.numbers': 'Numeri',
     'nav.work': 'Lavoro',
     'nav.path': 'Percorso',
+    'nav.japan': 'Giappone',
     'nav.contact': 'Contatti',
 
     'hero.role': 'NOC Engineer in un managed service provider, studente di Informatica e Sicurezza dei Sistemi all’Università Statale di Milano',
@@ -27,11 +28,11 @@
 
     'story.title': 'Da gennaio 2025 a ottobre 2026, in ticket',
     'story.s1.label': 'ticket chiusi',
-    'story.s1.note': '1.589 nel 2025 e 1.081 nel 2026, dagli alert gestiti in pochi minuti ai progetti da oltre 50 ore registrate.',
+    'story.s1.note': 'Circa 1.600 nel 2025 e 1.100 nel 2026, dagli alert gestiti in pochi minuti ai progetti da oltre 50 ore registrate.',
     'story.s2.label': 'ore registrate sui ticket',
     'story.s2.note': 'Circa 48 minuti per ticket in media. Formazione, studio e lavoro fuori orario svolti fuori dai ticket non sono inclusi.',
     'story.s3.label': 'ticket di alert di monitoraggio e sicurezza',
-    'story.s3.note': 'Triage degli alert di N-central, SIEM ed EDR (SentinelOne). Circa 577 arrivano dal solo monitoraggio N-central.',
+    'story.s3.note': 'Triage degli alert di N-central, SIEM ed EDR (SentinelOne). Circa 580 arrivano dal solo monitoraggio N-central.',
     'story.s4.label': 'aziende clienti seguite',
     'story.s4.note': 'Alcune con sedi a Miami, in Moldavia, in Cina e a Rotterdam.',
 
@@ -49,10 +50,10 @@
     'areas.edr': 'EDR (SentinelOne)',
     'areas.srv': 'Server e virtualizzazione',
     'areas.patch': 'Patching e BitLocker',
-    'areas.note': 'Le aree sono stimate dalle parole chiave nei titoli dei ticket: i numeri sono approssimati e i ticket con titoli generici sono esclusi. Le ore sono il tempo registrato su ogni ticket. Per il 2026 aree e ore riguardano i primi 1.000 ticket su 1.081.',
+    'areas.note': 'Le aree sono stimate dalle parole chiave nei titoli dei ticket: i numeri sono approssimati e i ticket con titoli generici sono esclusi. Le ore sono il tempo registrato su ogni ticket. Per il 2026 aree e ore riguardano i primi 1.000 ticket su circa 1.100.',
 
     'role.title': 'Cosa faccio',
-    'role.d1.t': 'Responsabile N-central',
+    'role.d1.t': 'Amministrazione N-Central',
     'role.d1.d': 'Configurazione, monitoraggi, patching, automazioni e rapporti con il vendor.',
     'role.d2.t': 'Monitoraggio e triage',
     'role.d2.d': 'Alert di N-central, SIEM (Intrusa), MDR (Adlumin) ed EDR (SentinelOne).',
@@ -67,43 +68,14 @@
     'role.d7.t': 'Formazione esterna',
     'role.d7.d': 'Formazione su N-central, Cove e SentinelOne per aziende terze.',
     'role.d8.t': 'Supporto commerciale',
-    'role.d8.d': 'Demo di prodotto, webinar e supporto prevendita.',
+    'role.d8.d': 'Demo di prodotto e webinar.',
 
     'stack.title': 'Gli strumenti che uso',
     'stack.rmm': 'RMM e monitoraggio',
     'stack.sec': 'Sicurezza',
     'stack.net': 'Rete',
-    'stack.vpn': 'VPN remote access e site-to-site',
     'stack.srv': 'Server e virtualizzazione',
     'stack.auto': 'Automazione',
-
-    'proj.title': 'Progetti selezionati',
-    'proj.intro': 'I nomi dei clienti sono omessi. Le ore sono quelle registrate sul ticket.',
-    'proj.f.all': 'Tutti',
-    'proj.f.client': 'Progetti per clienti',
-    'proj.f.internal': 'Strumenti interni',
-    'proj.tag.client': 'Progetto per cliente',
-    'proj.tag.internal': 'Strumento interno',
-    'proj.p1.t': 'Deploy automatico dei dispositivi',
-    'proj.p1.d': 'Automazione PowerShell per il deploy dei nuovi dispositivi.',
-    'proj.p2.t': 'Progetto di rete aziendale',
-    'proj.p2.d': 'Lavoro sulla rete di un cliente.',
-    'proj.p3.t': 'Script per i permessi delle cartelle in Active Directory',
-    'proj.p3.d': 'Uno script per gestire i permessi delle cartelle in Active Directory.',
-    'proj.p4.t': 'Firme Microsoft 365 centralizzate',
-    'proj.p4.d': 'Firme email aziendali gestite in modo centralizzato con CodeTwo.',
-    'proj.p5.t': 'Installazione di TSplus per l’accesso remoto',
-    'proj.p5.d': 'Installazione per un cliente, più circa 6 ore di test interni prima.',
-    'proj.p6.t': 'Migrazione da Kaspersky a SentinelOne',
-    'proj.p6.d': 'Rimozione di Kaspersky e attivazione dell’EDR SentinelOne per un cliente.',
-    'proj.p7.t': 'Rete per una sede in Cina',
-    'proj.p7.d': 'Lavoro sulla rete della sede in Cina di un cliente.',
-    'proj.p8.t': 'Migrazione dell’infrastruttura',
-    'proj.p8.d': 'Migrazione dell’infrastruttura di un cliente.',
-    'proj.p9.t': 'Bilanciamento del carico sul firewall',
-    'proj.p9.d': 'Bilanciamento del carico configurato sul firewall di un cliente.',
-    'proj.p10.t': 'Deploy dell’agente Adlumin',
-    'proj.p10.d': 'Distribuzione dell’agente MDR Adlumin tramite una Custom Property di N-central.',
 
     'cert.title': 'Certificazioni',
     'cert.note': 'Ho ottenuto entrambe le certificazioni N-able durante le trasferte di lavoro a Miami e Berlino.',
@@ -113,6 +85,7 @@
     'path.e1.d': 'Percorso di 5 anni all’istituto tecnico, indirizzo Informatica e telecomunicazioni.',
     'path.e2.t': 'Un anno di studio in Giappone',
     'path.e2.d': 'Da ottobre 2022 a settembre 2023, immersione totale in Giappone tra studio e lavoro. Si è concluso con la certificazione linguistica JLPT N3.',
+    'path.e2.more': 'Di più su quell’anno',
     'path.e3.when': '2023 – oggi',
     'path.e3.d': 'Tre anni in un managed service provider: RMM N-central, monitoraggio, patching, automazioni e servizi di sicurezza gestita.',
     'path.e4.when': '2025 – oggi',
@@ -121,6 +94,31 @@
     'path.e4.d': 'Un corso incentrato su informatica, sicurezza e privacy: sviluppo software e infrastrutture sicure, sicurezza di reti e cloud, gestione della sicurezza e aspetti normativi.',
 
     'person.title': 'Oltre ai ticket',
+    // Sezione Giappone. Le voci tra [ ] e le didascalie delle foto sono da completare.
+    'japan.title': 'Un anno a Kyoto',
+    'japan.lead': 'Da ottobre 2022 a settembre 2023 ho vissuto a Kyoto, studiando giapponese alla ISI 日本語学校 e lavorando allo stesso tempo. L’anno si è concluso con la certificazione linguistica JLPT N3.',
+    'japan.f1.t': 'Quando',
+    'japan.f1.d': 'Ott 2022 – Set 2023',
+    'japan.f2.t': 'Dove',
+    'japan.f3.t': 'Scuola',
+    'japan.f4.t': 'Lingua',
+    'japan.p1.cap': 'Foto 1: aggiungi luogo e mese',
+    'japan.p2.cap': 'Foto 2: aggiungi luogo e mese',
+    'japan.p3.cap': 'Foto 3: aggiungi luogo e mese',
+    'japan.p4.cap': 'Foto 4: aggiungi luogo e mese',
+    'japan.p5.cap': 'Foto 5: aggiungi luogo e mese',
+    'japan.p1.alt': 'Foto 1 dal Giappone',
+    'japan.p2.alt': 'Foto 2 dal Giappone',
+    'japan.p3.alt': 'Foto 3 dal Giappone',
+    'japan.p4.alt': 'Foto 4 dal Giappone',
+    'japan.p5.alt': 'Foto 5 dal Giappone',
+    'japan.show1': 'Mostra la foto 1',
+    'japan.show2': 'Mostra la foto 2',
+    'japan.show3': 'Mostra la foto 3',
+    'japan.show4': 'Mostra la foto 4',
+    'japan.show5': 'Mostra la foto 5',
+    'japan.story': '[Da completare: due o tre frasi con parole tue su quest’anno.]',
+
     'person.soft': 'Come lavoro',
     'person.s1': 'Curiosità',
     'person.s2': 'Determinazione',
@@ -354,6 +352,37 @@
   } else {
     reveal.forEach(function (el) { el.classList.add('in'); });
   }
+
+  /* ===================== Giappone: rosa ciliegio ===================== */
+  // Quando la sezione #japan attraversa la fascia centrale dello schermo,
+  // la radice riceve data-sakura e styles.css passa alla palette rosa.
+  var japan = document.getElementById('japan');
+  if (japan && 'IntersectionObserver' in window) {
+    var sakuraIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          root.setAttribute('data-sakura', '');
+          japan.classList.add('is-bloomed'); // il ramo cresce e fiorisce una volta sola
+        } else {
+          root.removeAttribute('data-sakura');
+        }
+      });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    sakuraIO.observe(japan);
+  } else if (japan) {
+    japan.classList.add('is-bloomed');
+  }
+
+  /* ===================== Giappone: galleria ===================== */
+  var gThumbs = document.querySelectorAll('.gallery__thumbs button');
+  var gItems = document.querySelectorAll('.gallery__item');
+  function showPhoto(i) {
+    gThumbs.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.index === i)); });
+    gItems.forEach(function (f) { f.classList.toggle('is-current', f.dataset.index === i); });
+  }
+  gThumbs.forEach(function (b) {
+    b.addEventListener('click', function () { showPhoto(b.dataset.index); });
+  });
 
   /* ===================== Filtro progetti ===================== */
   var filterBtns = document.querySelectorAll('.filter button');

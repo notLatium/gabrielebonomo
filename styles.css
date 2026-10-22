@@ -67,6 +67,67 @@
   color-scheme: dark;
 }
 
+/* ---------- Rosa ciliegio (sezione Giappone) ----------
+   script.js aggiunge data-sakura alla radice quando la sezione #japan
+   è al centro dello schermo, e lo toglie quando esci. Vale per tutta la
+   pagina, barra in alto inclusa, sia in tema chiaro sia scuro. */
+:root[data-sakura] {
+  --bg: #fcf0f4;
+  --bg-alt: #f7e2ea;
+  --ink: #3b2830;
+  --ink-soft: #7d5f6a;
+  --slate: #b04a6c;
+  --slate-soft: #d593a9;
+  --line: #f0d5df;
+  --bar-muted: #ecc7d4;
+  --on-slate: #ffffff;
+  --kanji: rgba(214, 120, 152, 0.13);
+  --header-bg: rgba(252, 240, 244, 0.8);
+  --story-bg: #8e3d5a;
+  --story-ink: #ffffff;
+  color-scheme: light;
+}
+:root[data-sakura][data-theme-active="dark"] {
+  --bg: #241419;
+  --bg-alt: #2e1a21;
+  --ink: #f6e8ee;
+  --ink-soft: #c9a8b5;
+  --slate: #f5b8ca;
+  --slate-soft: #b98a9b;
+  --line: #3b2a31;
+  --bar-muted: #4b333c;
+  --on-slate: #241419;
+  --kanji: rgba(245, 184, 202, 0.08);
+  --header-bg: rgba(36, 20, 25, 0.8);
+  --story-bg: #3b222b;
+  --story-ink: #f6e8ee;
+  color-scheme: dark;
+}
+
+/* Registrare i colori come <color> permette di animarli: il passaggio al rosa
+   (e il cambio di tema) sfuma invece di scattare. Nei browser che non
+   supportano @property il cambio avviene comunque, solo senza sfumatura. */
+@property --bg { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
+@property --bg-alt { syntax: "<color>"; inherits: true; initial-value: #f3f5f6; }
+@property --ink { syntax: "<color>"; inherits: true; initial-value: #25343a; }
+@property --ink-soft { syntax: "<color>"; inherits: true; initial-value: #5d6e74; }
+@property --slate { syntax: "<color>"; inherits: true; initial-value: #374f59; }
+@property --slate-soft { syntax: "<color>"; inherits: true; initial-value: #7c8c92; }
+@property --line { syntax: "<color>"; inherits: true; initial-value: #dde3e5; }
+@property --bar-muted { syntax: "<color>"; inherits: true; initial-value: #c6ced1; }
+@property --on-slate { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
+@property --kanji { syntax: "<color>"; inherits: true; initial-value: rgba(55, 79, 89, 0.075); }
+@property --header-bg { syntax: "<color>"; inherits: true; initial-value: rgba(255, 255, 255, 0.78); }
+@property --story-bg { syntax: "<color>"; inherits: true; initial-value: #374f59; }
+@property --story-ink { syntax: "<color>"; inherits: true; initial-value: #ffffff; }
+:root {
+  transition:
+    --bg .9s var(--ease), --bg-alt .9s var(--ease), --ink .9s var(--ease), --ink-soft .9s var(--ease),
+    --slate .9s var(--ease), --slate-soft .9s var(--ease), --line .9s var(--ease), --bar-muted .9s var(--ease),
+    --on-slate .9s var(--ease), --kanji .9s var(--ease), --header-bg .9s var(--ease),
+    --story-bg .9s var(--ease), --story-ink .9s var(--ease);
+}
+
 *, *::before, *::after { box-sizing: inherit; }
 html { scroll-behavior: smooth; scroll-padding-top: calc(4.5rem + env(safe-area-inset-top, 0px)); }
 body {
@@ -461,6 +522,158 @@ body::before {
 .tl__where { margin-top: .15rem; font-size: .95rem; }
 .timeline p:not(.tl__where) { margin-top: .5rem; color: var(--ink-soft); max-width: 60ch; }
 
+/* ---------- Link "More about that year" nella timeline ---------- */
+.tl__more {
+  display: inline-block; margin-top: .6rem;
+  font-family: var(--f-head); font-size: .9rem; color: var(--slate);
+  text-underline-offset: .25em; text-decoration-thickness: 1px;
+}
+
+/* ---------- Japan ---------- */
+.japan {
+  position: relative; overflow: hidden;
+  padding-top: clamp(11rem, 21vw, 17rem);
+  /* colori del ramo, fissi: i fiori restano rosa anche mentre la pagina sfuma */
+  --branch: #5e3c45;
+  --petal: #fbd3df;
+  --petal-edge: #ec9fb8;
+  --stamen: #c2456d;
+}
+[data-theme-active="dark"] .japan {
+  --branch: #a3848c;
+  --petal: #f6bccd;
+  --petal-edge: #d97f9d;
+  --stamen: #ffe3ec;
+}
+.japan .wrap { position: relative; z-index: 1; }
+.japan__kanji {
+  position: absolute; top: clamp(8rem, 16vw, 13rem); right: -5vw;
+  font-family: var(--f-kanji); font-weight: 300;
+  font-size: clamp(15rem, 40vw, 36rem); line-height: 1;
+  color: var(--kanji);
+  pointer-events: none; user-select: none;
+}
+.japan__jp {
+  margin-top: .9rem;
+  font-family: var(--f-kanji); font-weight: 300; font-size: 1.15rem; letter-spacing: .25em;
+  color: var(--slate-soft);
+}
+
+/* Ramo di ciliegio */
+.japan__branch {
+  position: absolute; left: 0; top: clamp(.5rem, 2vw, 1.5rem);
+  width: max(22rem, min(62vw, 52rem));
+  pointer-events: none;
+}
+.japan__branch svg { display: block; width: 100%; height: auto; overflow: visible; }
+.sk-wood path { fill: none; stroke: var(--branch); stroke-linecap: round; stroke-linejoin: round; }
+.sk-petal { fill: var(--petal); stroke: var(--petal-edge); stroke-width: .6; }
+.sk-heart { fill: var(--petal-edge); opacity: .55; }
+.sk-stamen { stroke: var(--stamen); stroke-width: .7; stroke-linecap: round; }
+.sk-anther { fill: var(--stamen); }
+.sk-budhead { fill: var(--petal-edge); }
+.sk-calyx { fill: var(--branch); }
+.sk-bloom { transform-box: fill-box; transform-origin: center; }
+
+/* Crescita e fioritura: un solo momento, all'arrivo nella sezione */
+.js .sk-wood path {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  transition: stroke-dashoffset .9s cubic-bezier(.45, .05, .35, 1) var(--d);
+}
+.js .sk-bloom {
+  transform: scale(0) rotate(-40deg); opacity: 0;
+  transition: transform .7s cubic-bezier(.34, 1.56, .64, 1) var(--d), opacity .3s var(--ease) var(--d);
+}
+.js .japan.is-bloomed .sk-wood path { stroke-dashoffset: 0; }
+.js .japan.is-bloomed .sk-bloom { transform: none; opacity: 1; }
+
+/* Petali che cadono */
+.japan__petals { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.japan__petals i {
+  position: absolute; top: -2rem; left: var(--x);
+  width: .7rem; height: .55rem;
+  background: var(--petal); border: 1px solid var(--petal-edge);
+  border-radius: 150% 0 150% 0;
+  opacity: 0;
+  animation: sk-fall var(--t) linear var(--w) infinite paused;
+  transition: opacity .8s var(--ease);
+}
+[data-sakura] .japan.is-bloomed .japan__petals i { opacity: .85; animation-play-state: running; }
+.japan__petals i:nth-child(1) { --x: 6%;  --t: 14s; --w: 1.6s; }
+.japan__petals i:nth-child(2) { --x: 14%; --t: 18s; --w: 4s; }
+.japan__petals i:nth-child(3) { --x: 22%; --t: 16s; --w: 7s; }
+.japan__petals i:nth-child(4) { --x: 31%; --t: 20s; --w: 2.4s; }
+.japan__petals i:nth-child(5) { --x: 38%; --t: 15s; --w: 9s; }
+.japan__petals i:nth-child(6) { --x: 46%; --t: 19s; --w: 5.5s; }
+.japan__petals i:nth-child(7) { --x: 53%; --t: 17s; --w: 11s; }
+.japan__petals i:nth-child(8) { --x: 10%; --t: 21s; --w: 13s; }
+@keyframes sk-fall {
+  0%   { top: 8%;   transform: translateX(0) rotate(0deg); }
+  25%  { transform: translateX(2.5rem) rotate(80deg); }
+  50%  { transform: translateX(-.5rem) rotate(170deg); }
+  75%  { transform: translateX(3rem) rotate(250deg); }
+  100% { top: 102%; transform: translateX(1rem) rotate(340deg); }
+}
+
+.japan__intro {
+  margin-top: 2rem;
+  display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem clamp(2rem, 6vw, 5rem); align-items: start;
+}
+.japan__lead { max-width: 52ch; font-size: 1.12rem; line-height: 1.65; }
+.japan__facts { display: grid; gap: .6rem; }
+.japan__facts > div {
+  display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;
+  border-bottom: 1px solid var(--line); padding-bottom: .5rem;
+}
+.japan__facts dt { color: var(--ink-soft); font-size: .95rem; }
+.japan__facts dd { font-family: var(--f-head); font-weight: 500; color: var(--slate); text-align: right; }
+
+.gallery { margin-top: clamp(2.5rem, 5vw, 3.5rem); }
+.gallery__stage { display: grid; }
+.gallery__item {
+  grid-area: 1 / 1; margin: 0;
+  opacity: 0; visibility: hidden;
+  transition: opacity .6s var(--ease), visibility 0s linear .6s;
+}
+.gallery__item.is-current { opacity: 1; visibility: visible; transition: opacity .6s var(--ease); }
+.gallery__item img {
+  width: 100%; aspect-ratio: 3 / 2; height: auto; max-height: 72vh; object-fit: cover;
+  border-radius: .75rem; background: var(--bg-alt);
+  box-shadow: 0 1.75rem 3.5rem -2rem color-mix(in srgb, var(--slate) 55%, transparent);
+}
+.gallery__item figcaption { margin-top: .75rem; font-size: .95rem; color: var(--ink-soft); }
+
+.gallery__thumbs {
+  list-style: none; margin-top: 1.25rem;
+  display: flex; gap: .75rem; overflow-x: auto; padding: 4px;
+  scrollbar-width: thin;
+}
+.gallery__thumbs li { flex: none; }
+.gallery__thumbs button {
+  display: block; padding: 0; border: 0; background: none; cursor: pointer;
+  width: 6.5rem; aspect-ratio: 1; border-radius: .5rem; overflow: hidden;
+  opacity: .5; box-shadow: 0 0 0 0 var(--slate);
+  transition: opacity .25s var(--ease), box-shadow .25s var(--ease);
+}
+.gallery__thumbs button:hover { opacity: .85; }
+.gallery__thumbs button[aria-pressed="true"] { opacity: 1; box-shadow: 0 0 0 2px var(--slate); }
+.gallery__thumbs img { width: 100%; height: 100%; object-fit: cover; }
+
+.japan__story {
+  margin-top: 2.75rem; max-width: 60ch; color: var(--ink-soft);
+  padding-left: 1.25rem; border-left: 3px solid var(--slate-soft);
+}
+
+.vh {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+@media (max-width: 820px) {
+  .japan__intro { grid-template-columns: 1fr; }
+  .gallery__thumbs button { width: 4.75rem; }
+}
+
 /* ---------- Person ---------- */
 .person__grid {
   margin-top: 2.5rem;
@@ -513,4 +726,5 @@ body::before {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation: none !important; transition-delay: 0s !important; }
   .kanji { transform: none !important; }
+  .japan__petals { display: none; }
 }
